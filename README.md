@@ -1,6 +1,5 @@
 # Git Commands
-this version of the recommender system was my doctoral dissertation project.
-leave this one as is, make a copy for modification.
+this version of the recommender system is for academic institutional use.
 
 
 git init - Create a new git repo

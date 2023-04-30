@@ -46,7 +46,7 @@ export class DashboardPage extends React.Component {
       userDomain: userDomainArray[1]
     })
 
-    if ((uDomain != 'scholacity.org') && (uDomain != 'scholarsanonymous.org')) {
+    if ((uDomain != 'uwf.edu') && (uDomain != 'students.uwf.edu')) {
       console.log('logged out due to unauthorized domain');
       this.setState({
         invalidUserDomain: true,
@@ -77,7 +77,7 @@ export class DashboardPage extends React.Component {
 
   userManualDownloadLink = () => {
 
-    if (this.state.userDomain == 'scholacity.org')
+    if (this.state.userDomain == 'uwf.edu')
     {
       return (
         <div className="content-container-dashboard">
@@ -88,7 +88,7 @@ export class DashboardPage extends React.Component {
       );
 
     }
-    else if (this.state.userDomain == 'scholarsanonymous.org')
+    else if (this.state.userDomain == 'students.uwf.edu')
     {
 
       return (
