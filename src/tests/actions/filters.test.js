@@ -1,0 +1,66 @@
+import moment from 'moment/moment';
+import {
+  setStartDate,
+  setEndDate,
+  setTextFilter,
+  sortByKnowledgeArea,
+  sortByContent
+} from '../../actions/filters';
+
+test('should generate set start date action object', () => {
+  const action = setStartDate(moment(0));
+  expect(action).toEqual({
+    type: 'SET_START_DATE',
+    startDate: moment(0)
+  });
+});
+
+test('should generate set end date aciton object', () => {
+  const action = setEndDate(moment(0));
+  expect(action).toEqual({
+    type: 'SET_END_DATE',
+    endDate: moment(0)
+  });
+});
+
+test('should generate set text filter object with text value', () => {
+  const text = 'Something in';
+  const action = setTextFilter(text);
+  expect(action).toEqual({
+    type: 'SET_TEXT_FILTER',
+    text
+  });
+});
+
+test('should generate set text filter object with disposition value', () => {
+  const disposition = 'Something in';
+  const action = setDispositionFilter(disposition);
+  expect(action).toEqual({
+    type: 'SET_DISPOSITION_FILTER',
+    disposition
+  });
+});
+
+test('should generate set text filter object with default', () => {
+  const action = setTextFilter();
+  expect(action).toEqual({
+    type: 'SET_TEXT_FILTER',
+    text: ''
+  });
+});
+
+test('should generate set disposition filter object with default', () => {
+  const action = setDispositionFilter();
+  expect(action).toEqual({
+    type: 'SET_DISPOSITION_FILTER',
+    disposition: ''
+  });
+});
+
+test('should generate action object for sort by date', () => {
+  expect(sortByContent()).toEqual({ type: 'SORT_BY_CONTENT' });
+});
+
+test('should generate action object for sort by amount', () => {
+  expect(sortByKnowledgeArea()).toEqual({ type: 'SORT_BY_KNOWLEDGE_AREA' });
+});
